@@ -1,3 +1,6 @@
+#include <string>
+using namespace std;
+
 class Piece
 {
 public:
@@ -14,20 +17,20 @@ public:
     }
 
     void connecterPieces(Piece& pieceConnectee, string orientation){
-    if (orientation == "Nord" || orientation == "nord") {
-        nord = pieceConnectee;
-        pieceConnectee.setSud(this);
-    } else if (orientation == "Sud" || orientation == "sud") {
-        sud = pieceConnectee;
-        pieceConnectee.setNord(this);
-    } else if (orientation == "Est" || orientation == "est") {
-        est = pieceConnectee;
-        pieceConnectee.setOuest(this);
-    } else if (orientation == "Ouest" || orientation == "ouest") {
-        ouest = pieceConnectee;
-        pieceConnectee.setEst(this);
+        if (orientation == "Nord" || orientation == "nord") {
+            nord = &pieceConnectee;
+            pieceConnectee.setSud(this);
+        } else if (orientation == "Sud" || orientation == "sud") {
+            sud = &pieceConnectee;
+            pieceConnectee.setNord(this);
+        } else if (orientation == "Est" || orientation == "est") {
+            est = &pieceConnectee;
+            pieceConnectee.setOuest(this);
+        } else if (orientation == "Ouest" || orientation == "ouest") {
+            ouest = &pieceConnectee;
+            pieceConnectee.setEst(this);
+        }
     }
-}
 
 
 private:

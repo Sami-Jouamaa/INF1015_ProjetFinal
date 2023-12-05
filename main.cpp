@@ -4,6 +4,10 @@
 #include "mario.hpp"
 #include "Carte.hpp"
 
+#include <iostream>
+
+using namespace std;
+
 
 int main(){
 Carte carte;
@@ -12,7 +16,7 @@ Piece sallePrincipale("Salle principale");
 Piece couloirGauche("Couloir Gauche");
 Piece salleBombe("Salle avec un Tableau avec des Bombes");
 Piece salleEnneigee("Salle avec un Tableau enneigé");
-Piece aquarium("Aquarium");
+Piece aquarium("Aquarium"); //Tableau  eau
 Piece donjon("Donjon");
 Piece couloirDroit("Couloir Droit");
 Piece courArriere("Cour Arrière");
@@ -29,14 +33,16 @@ sallePrincipale.connecterPieces(couloirDroit,"Est");
 sallePrincipale.connecterPieces(escaliers,"Nord");
 sallePrincipale.connecterPieces(dehors,"Sud");
 couloirGauche.connecterPieces(salleBombe,"Ouest");
-couloirGauche.connecterPieces(donjou,"Sud");
+couloirGauche.connecterPieces(donjon,"Sud");
 couloirDroit.connecterPieces(courArriere,"Nord");
 couloirDroit.connecterPieces(aquarium,"Est");
 couloirDroit.connecterPieces(salleEnneigee,"Sud");
-escalier.connecterPieces(infini,"Nord");
-escalier.connecterPieces(horloge,"Est");
-escalier.connecterPieces(exposition,"Ouest");
-infini.connecterPieces(bossFinal,"Nord")
+escaliers.connecterPieces(infini,"Nord");
+escaliers.connecterPieces(horloge,"Est");
+escaliers.connecterPieces(exposition,"Ouest");
+infini.connecterPieces(bossFinal, "Nord");
+
+cout << sallePrincipale.nom;
 
 
 
