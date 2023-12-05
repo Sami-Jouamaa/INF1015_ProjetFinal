@@ -4,8 +4,15 @@ using namespace std;
 class Piece
 {
 public:
-    Piece(string nom, string description) : nom(nom), description(description), nord(nullptr), sud(nullptr), 
-    est(nullptr), ouest(nullptr) {}
+    Piece(string nom, string description)
+    {
+        nom = nom;
+        description = description;
+        nord = nullptr;
+        sud = nullptr;
+        est = nullptr;
+        ouest = nullptr;
+    }
 
     void setSud(Piece* piece) { sud = piece; }
     void setNord(Piece* piece) { nord = piece; }
@@ -32,6 +39,14 @@ public:
         }
     }
 
+    //Getters pour nom, description, pieces au sud, nord, ouest, est
+    string getNom() { return nom; }
+    string getDescription() { return description; }
+    
+    Piece* getSud() { return sud; }
+    Piece* getNord() { return nord; }
+    Piece* getEst() { return est; }
+    Piece* getOuest() { return ouest; }
 
 private:
     std::string nom;
